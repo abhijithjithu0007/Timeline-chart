@@ -1,6 +1,8 @@
 import React from "react";
 import { Box, Button, Typography } from "@mui/material";
 
+//header of calendar
+
 const CalendarHeader = ({
   dateRange,
   onRangeChange,
@@ -33,6 +35,10 @@ const CalendarHeader = ({
           1 Month
         </Button>
       </Box>
+      <Typography variant="h6">
+        {dateRange.start.toISOString().split("T")[0]} -{" "}
+        {dateRange.end.toISOString().split("T")[0]}
+      </Typography>
       <Box display="flex" gap={1}>
         <Button variant="outlined" onClick={onTodayClick}>
           Today
@@ -44,10 +50,6 @@ const CalendarHeader = ({
           Next
         </Button>
       </Box>
-      <Typography variant="h6">
-        {dateRange.start.toISOString().split("T")[0]} -{" "}
-        {dateRange.end.toISOString().split("T")[0]}
-      </Typography>
     </Box>
   );
 };

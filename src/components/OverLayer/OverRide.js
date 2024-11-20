@@ -1,9 +1,8 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 
-//layer data component
-
-const ScheduleLayer = ({ layerData, dateRange }) => {
+//override layer data component
+const OverRideLayer = ({ overRideLayer, currentDateRange }) => {
   return (
     <Box display="flex">
       <Box
@@ -12,20 +11,15 @@ const ScheduleLayer = ({ layerData, dateRange }) => {
         textAlign="center"
         bgcolor="lightgray"
       >
-        <Typography variant="body2">Layer {layerData.number}</Typography>
+        <Typography variant="body2">Final Schedule</Typography>
       </Box>
-      {dateRange.map((date, index) => {
-        const entry = layerData.layers.find(
-          (entry) =>
-            date >= entry.startDate.split(" ")[0] &&
-            date <= entry.endDate.split(" ")[0] &&
-            entry.userId
+      {currentDateRange.map((date, index) => {
+        const entry = overRideLayer?.find(
+          (item) =>
+            date >= item.startDate.split(" ")[0] &&
+            date <= item.endDate.split(" ")[0]
         );
-        const bgColor = entry
-          ? index % 2 === 0
-            ? "yellow"
-            : "orange"
-          : "transparent";
+        const bgColor = entry ? "lightblue" : "transparent";
         return (
           <Box
             key={index}
@@ -47,4 +41,4 @@ const ScheduleLayer = ({ layerData, dateRange }) => {
   );
 };
 
-export default ScheduleLayer;
+export default OverRideLayer;
