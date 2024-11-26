@@ -36,9 +36,19 @@ const CalendarHeader = ({
         </Button>
       </Box>
       <Typography variant="h6">
-        {dateRange.start.toISOString().split("T")[0]} -{" "}
-        {dateRange.end.toISOString().split("T")[0]}
+        {new Date(dateRange.start).toLocaleDateString("en-US", {
+          weekday: "short",
+          day: "numeric",
+          year: "numeric",
+        })}{" "}
+        -{" "}
+        {new Date(dateRange.end).toLocaleDateString("en-US", {
+          weekday: "short",
+          day: "numeric",
+          year: "numeric",
+        })}
       </Typography>
+
       <Box display="flex" gap={1}>
         <Button variant="outlined" onClick={onTodayClick}>
           Today

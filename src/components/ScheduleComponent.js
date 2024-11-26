@@ -3,7 +3,6 @@ import { Box } from "@mui/material";
 import CalendarHeader from "./CalendarHeader/CalendarHeader";
 import ScheduleGrid from "./ScheduleGrid/ScheduleGrid";
 import scheduleData from "../data.json";
-import Final from "./FinalSchedule/FinalScedule";
 
 const ScheduleComponent = () => {
   const [view, setView] = useState("month");
@@ -69,6 +68,7 @@ const ScheduleComponent = () => {
         onNext={handleNext}
       />
       <ScheduleGrid
+        view={view}
         scheduleData={scheduleData}
         currentDateRange={currentDateRange}
       />

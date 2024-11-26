@@ -11,7 +11,7 @@ const OverRideLayer = ({ overRideLayer, currentDateRange }) => {
         textAlign="center"
         bgcolor="lightgray"
       >
-        <Typography variant="body2">Final Schedule</Typography>
+        <Typography variant="body2">Over Ride Layer</Typography>
       </Box>
       {currentDateRange.map((date, index) => {
         const entry = overRideLayer?.find(
