@@ -35,7 +35,7 @@ const CalendarHeader = ({
           1 Month
         </Button>
       </Box>
-      <Typography variant="h6">
+      <Typography variant="h6" fontFamily={"fantasy"}>
         {new Date(dateRange.start).toLocaleDateString("en-US", {
           weekday: "short",
           day: "numeric",
