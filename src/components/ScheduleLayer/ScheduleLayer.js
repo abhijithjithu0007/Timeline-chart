@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 
-// ScheduleLayer Component
+// scheduleLayer component
 const ScheduleLayer = ({ layerData, dateRange }) => {
   return (
     <Box display="flex" gap={1}>
@@ -27,8 +27,8 @@ const ScheduleLayer = ({ layerData, dateRange }) => {
 
         const bgColor = entry
           ? index % 2 === 0
-            ? "#FFEB3B"
-            : "#FF9800"
+            ? "#EE763B"
+            : "#000"
           : "transparent";
 
         return (
@@ -50,7 +50,14 @@ const ScheduleLayer = ({ layerData, dateRange }) => {
               variant="body2"
               color="textPrimary"
               textAlign="center"
-              sx={{ fontSize: "12px" }}
+              sx={{
+                fontSize: "12px",
+                color: entry
+                  ? index % 2 === 0
+                    ? "black"
+                    : "white"
+                  : "transparent",
+              }}
             >
               {entry ? `User ${entry.userId}` : ""}
             </Typography>

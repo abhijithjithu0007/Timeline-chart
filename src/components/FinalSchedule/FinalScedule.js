@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 
-// FinalRow Component
+// finalRow Component
 const FinalRow = ({ finalSchedule, currentDateRange }) => {
   return (
     <Box display="flex" gap={1}>
@@ -24,7 +24,7 @@ const FinalRow = ({ finalSchedule, currentDateRange }) => {
             date <= item.endDate.split(" ")[0]
         );
 
-        const bgColor = entry ? "#BBDEFB" : "transparent"; // Light blue for assigned date
+        const bgColor = entry ? "#BBDEFB" : "transparent";
         return (
           <Box
             key={index}
@@ -38,15 +38,13 @@ const FinalRow = ({ finalSchedule, currentDateRange }) => {
             bgcolor={bgColor}
             boxShadow="0 2px 4px rgba(0, 0, 0, 0.1)"
             transition="all 0.3s ease-in-out"
-            _hover={{
-              bgcolor: entry ? "#2196F3" : "#f0f0f0", // Hover effect on hover
-              color: entry ? "#fff" : "#000", // Change text color on hover
-              transform: "scale(1.05)", // Slightly enlarge the box on hover
-              boxShadow: "0 8px 15px rgba(0, 0, 0, 0.2)", // Enhanced shadow on hover
-              cursor: "pointer", // Change cursor on hover
-            }}
           >
-            <Typography variant="body2" color="textPrimary" textAlign="center">
+            <Typography
+              variant="body2"
+              color="textPrimary"
+              textAlign="center"
+              fontSize={"12px"}
+            >
               {entry ? `User ${entry.userId}` : ""}
             </Typography>
           </Box>
